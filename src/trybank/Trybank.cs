@@ -118,10 +118,13 @@ public class Trybank
       throw new AccessViolationException("Usuário não está logado");
     }
 
-    if (Bank[loggedUser, 3] < value) {
-        throw new InvalidOperationException("saldo insuficiente");
-    } else {
-        Bank[loggedUser, 3] -= value;
+    if (Bank[loggedUser, 3] < value)
+    {
+      throw new InvalidOperationException("saldo insuficiente");
+    }
+    else
+    {
+      Bank[loggedUser, 3] -= value;
     }
   }
 
