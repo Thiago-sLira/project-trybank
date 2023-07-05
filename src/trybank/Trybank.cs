@@ -52,10 +52,15 @@ public class Trybank
                 if (Bank[i, 2] == pass) {
                     loggedUser = i;
                     Logged = true;
+                    break;
                 } else {
                     throw new ArgumentException("Senha incorreta");
                 }
             }
+        }
+
+        if (!Logged) {
+            throw new ArgumentException("Agência + Conta não encontrada");
         }
     }
 
