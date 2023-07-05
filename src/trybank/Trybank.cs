@@ -53,7 +53,7 @@ public class Trybank
                     loggedUser = i;
                     Logged = true;
                 } else {
-                    
+                    throw new ArgumentException("Senha incorreta");
                 }
             }
         }
