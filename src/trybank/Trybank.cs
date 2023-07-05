@@ -83,8 +83,8 @@ public class Trybank
     }
     else
     {
-        Logged = false;
-        loggedUser = -99;
+      Logged = false;
+      loggedUser = -99;
     }
   }
 
@@ -102,7 +102,10 @@ public class Trybank
   // 5. Construa a funcionalidade de depositar dinheiro
   public void Deposit(int value)
   {
-    throw new NotImplementedException();
+    if (!Logged)
+    {
+      throw new AccessViolationException("Usuário não está logado");
+    }
   }
 
   // 6. Construa a funcionalidade de sacar dinheiro
