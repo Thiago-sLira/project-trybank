@@ -140,6 +140,17 @@ public class Trybank
     {
       throw new InvalidOperationException("Saldo insuficiente");
     }
+    else
+    {
+      for (int i = 0; i < maxAccounts; i += 1)
+      {
+        if (Bank[i, 0] == destinationNumber && Bank[i, 1] == destinationAgency)
+        {
+          Bank[loggedUser, 3] -= value;
+          Bank[i, 3] += value;
+        }
+      }
+    }
   }
 
 
