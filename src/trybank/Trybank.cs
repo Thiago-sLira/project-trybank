@@ -46,6 +46,17 @@ public class Trybank
         if (loggedUser >= 0) {
             throw new AccessViolationException("Usuário já está logado");
         }
+
+        for (int i = 0; i < maxAccounts; i += 1) {
+            if (Bank[i, 0] == number && Bank[i, 1] == agency) {
+                if (Bank[i, 2] == pass) {
+                    loggedUser = i;
+                    Logged = true;
+                } else {
+                    
+                }
+            }
+        }
     }
 
     // 3. Construa a funcionalidade de fazer Logout
